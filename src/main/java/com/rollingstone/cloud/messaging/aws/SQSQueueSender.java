@@ -25,8 +25,8 @@ public class SQSQueueSender {
 	public GenericCommandResult send(String queue, Object message) {
 		log.info("The Queue name is : "+ queue);
 		this.queueMessagingTemplate.convertAndSend(queue, message);
-		GenericCommandResult<TodoCommand> cr = new GenericCommandResult<TodoCommand>();
-		cr.setAsSuccessful("Success", (TodoCommand) message );
+		GenericCommandResult<String> cr = new GenericCommandResult<String>();
+		cr.setAsSuccessful("Success", "The message was sent successfully" );
 		return cr;
 		
 	}
