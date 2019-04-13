@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.amazonaws.services.sqs.AmazonSQSAsync;
 import com.rollingstone.command.GenericCommandResult;
+import com.rollingstone.command.TodoCommand;
 
 @Component
 public class SQSQueueSender {
@@ -24,8 +25,8 @@ public class SQSQueueSender {
 	public GenericCommandResult send(String queue, Object message) {
 		log.info("The Queue name is : "+ queue);
 		this.queueMessagingTemplate.convertAndSend(queue, message);
-		GenericCommandResult<String> cr = new GenericCommandResult<String>();
-		cr.setAsSuccessful((String) message, "Success");
+		GenericCommandResult<TodoCommand> cr = new GenericCommandResult<TodoCommand>();
+		cr.setAsSuccessful("Success", (TodoCommand) message );
 		return cr;
 		
 	}
