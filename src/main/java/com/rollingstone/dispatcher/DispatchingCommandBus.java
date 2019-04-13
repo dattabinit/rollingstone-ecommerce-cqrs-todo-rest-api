@@ -36,6 +36,9 @@ public class DispatchingCommandBus implements GenericCommandBus {
 	@Override
 	public <T extends GenericCommand> Future<GenericCommandResult> send(T command) {
 	
+		/*
+		 * So the next class we need to understand is the SQSCommandDispatcher.java
+		 */
 		return this.commandDispatcher.dispatch(command);
 	}
 	

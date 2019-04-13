@@ -7,6 +7,7 @@ public class GenericCommandHeader {
 	private String commandType;
 	private String schemaVersion;
 	private Timestamp createDate;
+	
 	public String getCommandType() {
 		return commandType;
 	}
