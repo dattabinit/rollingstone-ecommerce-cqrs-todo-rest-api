@@ -221,7 +221,7 @@ public class TodoController extends AbstractController {
 			todoCommand.setTodo(todo);
 			todoCommand.setId(UUID.randomUUID());
 			
-			GenericCommandHeader header = new GenericCommandHeader(GenericCommandType.UPDATE_TODO.toString(), SCHEMA_VERSION, new Timestamp(System.currentTimeMillis()));
+			GenericCommandHeader header = new GenericCommandHeader(GenericCommandType.DELETE_TODO.toString(), SCHEMA_VERSION, new Timestamp(System.currentTimeMillis()));
 			
 			todoCommand.setHeader(header);
 			
