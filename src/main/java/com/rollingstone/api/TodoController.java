@@ -13,6 +13,8 @@ import javax.validation.ValidatorFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,6 +43,23 @@ public class TodoController extends AbstractController {
 	private final GenericCommandBus commandBus;
 	private TodoService todoService;
 	private static Validator validator;
+	
+	/* 
+	 * The TodoController constructor takes two paramaters namely the GenericCommandBus and the TodoService.
+	 * The TodoService is a Java Class already annotated with
+	 * @Service
+		public class TodoService 
+	 * So Spring Boot will have no problem finding the TodoService during application start, 
+	 * create an install and assign it to the TodoController.
+	 * However, the first parameter which is an interface is a little tricky.
+	 * This class com.rollingstone.dispatcher.DispatchingCommandBus actually implements the GenericCommandBus
+	 * As per the Java Rules of the language, then DispatchingCommandBus is a GenericCommandBus.
+	 * The class is also annotated with
+	 * @Component
+	 *	public class DispatchingCommandBus implements GenericCommandBus
+	 *  So again following java rules, Spring Will have no problem to find an implementation of the interface GenericCommandBus
+	 *  create an instance of DispatchingCommandBus and assign that to the TodoController Constructor as the first Parameter
+	 */
 	
 	public TodoController(GenericCommandBus commandBus, TodoService todoService) {
 		this.commandBus = commandBus;

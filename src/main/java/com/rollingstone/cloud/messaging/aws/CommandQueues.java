@@ -9,7 +9,7 @@ public class CommandQueues {
 
 	private static final String categoryQueue = "Category_Command_Queue";
 	
-	private static final String todoQueue = "TODO_Queue";
+	private static final String todoQueue = "TODO_New_Queue";
 	
 	public static Map<String, String> commandQueueMap;
 	

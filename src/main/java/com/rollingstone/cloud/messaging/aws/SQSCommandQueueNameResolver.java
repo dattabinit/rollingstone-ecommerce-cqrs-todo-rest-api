@@ -1,10 +1,12 @@
 package com.rollingstone.cloud.messaging.aws;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import com.rollingstone.command.GenericCommandType;
 import com.rollingstone.command.interfaces.CommandQueueNameResolver;
 
+@Component
 public class SQSCommandQueueNameResolver implements CommandQueueNameResolver {
 
 	@Value("${queue.debug}")
