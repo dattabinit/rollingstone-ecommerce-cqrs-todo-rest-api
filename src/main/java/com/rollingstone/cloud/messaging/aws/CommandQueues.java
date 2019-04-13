@@ -21,6 +21,8 @@ public class CommandQueues {
 		
 		commandQueueMap.put(GenericCommandType.CREATE_TODO.toString(), todoQueue);
 		commandQueueMap.put(GenericCommandType.UPDATE_TODO.toString(), todoQueue);
+		commandQueueMap.put(GenericCommandType.DELETE_TODO.toString(), todoQueue);
+
 
 	}
 
