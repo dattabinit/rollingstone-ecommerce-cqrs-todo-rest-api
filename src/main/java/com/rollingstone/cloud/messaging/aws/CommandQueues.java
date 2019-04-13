@@ -19,8 +19,8 @@ public class CommandQueues {
 		commandQueueMap.put(GenericCommandType.CREATE_CATEGORY.toString(), categoryQueue);
 		commandQueueMap.put(GenericCommandType.UPDATE_CATEGORY.toString(), categoryQueue);
 		
-		commandQueueMap.put(GenericCommandType.CREATE_TODO.toString(), categoryQueue);
-		commandQueueMap.put(GenericCommandType.UPDATE_TODO.toString(), categoryQueue);
+		commandQueueMap.put(GenericCommandType.CREATE_TODO.toString(), todoQueue);
+		commandQueueMap.put(GenericCommandType.UPDATE_TODO.toString(), todoQueue);
 
 	}
 
